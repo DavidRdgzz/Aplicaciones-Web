@@ -1,12 +1,82 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <title>Mi primera pagina HTML</title>
-    <meta name="author" content="David Rodriguez">
-    <width=device-width, initial-scale=1.0>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 Horario 2SMXB</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<p>Hola soy David Rodriguez, me gusta la informatica y jugar a juegos<p>
-</body>
+    <section id="horario">
+        <h2>Horario de Clases</h2>
+        <table border="1">
+            <caption>Horario de 2SMXB - Curso 2025-2026</caption>
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>8:00 - 8:55</th>
+                    <td class="asig"rowspan="3">Sistemas operativos</td>
+                    <td class="asig"rowspan="2">Servicios en red</td>
+                    <td class="asig"rowspan="2">Seguridad informatica</td>
+                    <td class="asig">Sostenibilidad aplic</td>
+                    <td class="asig">Modulo optativo</td>
+                </tr>
+                <tr>
+                    <th>8:55 - 9:50</th>
+                    <td class="asig"rowspan="2">Seguridad en red</td>
+                    <td class="asig"rowspan="2">Projecto intermodula</td>
+                </tr>
+                <tr>
+                    <th>9:50 - 10:45</th>
+                    <td class="asig">Seguridad informatica</td>
+                    <td class="asig">Modulo optativo</td>
+                </tr>
+                <tr>
+                    <th>10:45 - 11:10</th>
+                    <td class="recreo" colspan="5"><center>Recreo</center></td>
+                </tr>
+                <tr>
+                    <th>11:10 - 12:05</th>
+                    <td class="asig">Modulo optativo</td>
+                    <td class="asig">Seguridad informatica<br></td>
+                    <td class="asig" rowspan="3">Sistemas operativos</td>
+                    <td class="asig" rowspan="3">Aplicaciones web</td>
+                    <td class="asig" rowspan="3">Servicios en red</td>
+                </tr>
+                <tr>
+                    <th>12:05 - 13:00</th>
+                    <td class="asig">Itinerario personal</td>
+                    <td class="asig" rowspan="2">Itinerario personal</td>
+                </tr>
+                <tr>
+                    <th>13:00 - 13:55</th>
+                    <td class="asig">Digitalizacion aplic</td>
+                </tr>
+            </tbody>
+        <img src="img/programador1.jpg" width="240">
+        </table>
+        <img src="img/programador1.jpg" width="240" alt="Programador trabajando">
+<h2 id="video">Vídeo relacionado</h2>
+<p>Aquí tienes un vídeo de introducción a la programación:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MJkdaVFHrto?start=107" 
+title="Curso de HTML" frameborder="0" allowfullscreen></iframe>
+
+<h2 id="mapa">Ubicación del instituto</h2>
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3135.8547441234567!2d-0.5380613!3d38.9864865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61a201e7d1eb61%3A0xf0250efa87a28639!2sIES%20Doctor%20Luis%20Simarro!5e0!3m2!1ses!2ses!4v1234567890123!5m2!1ses!2ses" 
+    width="600" height="450" frameborder="0" allowfullscreen></iframe>
+    </section>
+    </body>
 </html>
