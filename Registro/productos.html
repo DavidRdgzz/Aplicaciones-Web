@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Información sobre el producto</title>
+    <style>
+        /* CSS aún más simple (solo lo básico) */
+        body { font-family: Arial, sans-serif; margin: 16px; }
+        fieldset { border: 1px solid #ccc; margin: 8px 0; padding: 8px; }
+        legend { font-weight: bold; }
+        label { display: block; margin: 4px 0; }
+        textarea { height: 100px; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Información sobre el producto</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <!-- Datos básicos -->
+            <fieldset>
+                <legend>Datos básicos</legend>
+
+                <div class="row">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre del producto" />
+                </div>
+
+                <div class="row">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" required placeholder="Describe brevemente el producto"></textarea>
+                </div>
+
+                <div class="row">
+                    <label for="foto">Foto</label>
+                    <input type="file" id="foto" name="foto" accept="image/*" />
+                </div>
+
+                <div class="row">
+                    <input type="checkbox" id="contador" name="contador" />
+                    <label for="contador">Añadir contador de visitas</label>
+                </div>
+            </fieldset>
+
+            <!-- Datos económicos -->
+            <fieldset>
+                <legend>Datos económicos</legend>
+
+                <div class="row inline">
+                    <label for="precio">Precio</label>
+                    <input
+                        type="text"
+                        id="precio"
+                        name="precio"
+                        required
+                        placeholder="0,00"
+                        inputmode="decimal"
+                        pattern="^\d+(,\d{2})$"
+                        title="Usa coma como separador: por ejemplo 12,34"
+                        aria-describedby="precio-ayuda"
+                    />
+                    <span>€</span>
+                    <label for="impuestos" style="justify-self:end;">Impuestos</label>
+                    <select id="impuestos" name="impuestos">
+                        <option value="4" selected>4%</option>
+                        <option value="7">7%</option>
+                        <option value="16">16%</option>
+                        <option value="25">25%</option>
+                    </select>
+                </div>
+                <small id="precio-ayuda">Formato: número decimal con coma y dos decimales (ej. 123,45)</small>
+
+                <div class="row radios">
+                    <span>Promoción</span>
+                    <div class="option">
+                        <input type="radio" id="promo-ninguno" name="promocion" value="ninguno" checked />
+                        <label for="promo-ninguno">Ninguno</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="promo-transporte" name="promocion" value="transporte" />
+                        <label for="promo-transporte">Transporte gratuito</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="promo-descuento" name="promocion" value="descuento5" />
+                        <label for="promo-descuento">Descuento 5%</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="actions">
+                <input type="submit" value="Guardar" />
+                <input type="reset" value="Borrar" />
+            </div>
+        </form>
+    </main>
+</body>
+</html>
