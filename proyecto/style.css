@@ -1,0 +1,26 @@
+.contenedor {
+    border: 3px solid #3498db;
+    background-color: #ecf0f1;
+    height: 300px; 
+    display: flex;
+    align-self: center;
+    
+}
+
+.contenedor :nth-child(2) {
+    order: 1;
+    background-color: #2ecc71;
+}
+
+.contenedor :nth-child(3) {
+    order: 2;
+    background-color: #9b59b6;
+}
+.item {
+    background-color: #e74c3c;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    font-size: 1.5em;
+    text-align: center;
+}

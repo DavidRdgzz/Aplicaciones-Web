@@ -1,0 +1,19 @@
+.bloque {
+    border: solid;
+    height: 100vi;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex: 1;
+    margin: 5px;
+    background-color: greenyellow;
+}
+
+.bloque:nth-child(4) {
+    order: -1;
+}
+
+.layout {
+    display: flex;
+    flex-direction: row;
+}
