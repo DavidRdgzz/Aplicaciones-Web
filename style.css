@@ -1,0 +1,325 @@
+/* ========================================
+   CSS PRO - Aplicaciones Web
+   Para el mejor profe 🎓
+   ======================================== */
+
+/* Reset y variables globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --accent: #f093fb;
+    --dark: #1a1a2e;
+    --light: #eef2f7;
+    --success: #00d4aa;
+    --text: #2d3748;
+    --shadow: rgba(102, 126, 234, 0.25);
+}
+
+/* Fondo animado con gradiente */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #00d4aa);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: var(--text);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor principal con efecto glassmorphism */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Títulos con estilo premium */
+h1, h2, h3, ol {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #f0f0f0 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    animation: titleFloat 3s ease-in-out infinite;
+    text-align: center;
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+h2 {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    padding: 12px 35px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px var(--shadow);
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 10px 30px var(--shadow); }
+    50% { box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4); }
+}
+
+/* Lista ordenada con estilo de tarjetas */
+ol {
+    list-style: none;
+    counter-reset: item;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+li {
+    counter-increment: item;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    position: relative;
+}
+
+li::before {
+    content: counter(item);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px var(--shadow);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    transform: translateX(10px) scale(1.02);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+li:hover::before {
+    transform: translateY(-50%) rotate(10deg) scale(1.1);
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+}
+
+/* Links con efecto elegante */
+li a {
+    display: block;
+    padding: 22px 25px 22px 80px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+li a::after {
+    content: '→';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    opacity: 0;
+    font-size: 1.4rem;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+li:hover a {
+    color: var(--primary);
+    padding-left: 85px;
+}
+
+li:hover a::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Efecto de brillo al hover */
+li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+li:hover::after {
+    left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+        padding: 10px 25px;
+    }
+    
+    ol {
+        padding: 0 10px;
+    }
+    
+    li a {
+        font-size: 1rem;
+        padding: 18px 20px 18px 70px;
+    }
+    
+    li::before {
+        width: 35px;
+        height: 35px;
+        left: 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Animación de entrada escalonada */
+li {
+    opacity: 0;
+    animation: slideIn 0.6s ease forwards;
+}
+
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+li:nth-child(4) { animation-delay: 0.4s; }
+li:nth-child(5) { animation-delay: 0.5s; }
+li:nth-child(6) { animation-delay: 0.6s; }
+li:nth-child(7) { animation-delay: 0.7s; }
+li:nth-child(8) { animation-delay: 0.8s; }
+li:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Footer con créditos */
+body::after {
+    content: '✨ Hecho con CSS Pro ✨';
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary), var(--secondary));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--accent), var(--primary));
+}
+
+/* Selección de texto personalizada */
+::selection {
+    background: var(--primary);
+    color: #fff;
+}
